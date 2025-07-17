@@ -1,12 +1,13 @@
 package example3;
-
+//https://github.com/SimonHGR/UC-MemoryModel
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 public class ProdCons {
   public static void main(String[] args) throws Throwable {
     final int DATA_COUNT = 30_000_000;
-    BlockingQueue<int[]> queue = new ArrayBlockingQueue<>(10);
+//    BlockingQueue<int[]> queue = new ArrayBlockingQueue<>(10);
+    BadQueue<int[]> queue = new BadQueue<>();
 
     Runnable producer = () -> {
       System.out.println("Producer starting");
